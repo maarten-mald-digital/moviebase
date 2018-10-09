@@ -2,15 +2,18 @@
 
 @section('content')
 
+
     <h1 class="float-left">Movies</h1>
     <a class="btn btn-primary float-right" href="/movies/create" role="button">Add movie</a>
+
+    <div id="div1">div 1</div>
 
     <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col"></th>
             <th scope="col"></th>
-            <th scope="col">Title</th>
+            <th scope="col"><a id="titleSort">Title</a></th>
             <th scope="col">Genre</th>
             <th scope="col">Release date</th>
             <th scope="col">Rating</th>

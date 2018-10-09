@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 use App\Movie;
@@ -9,10 +10,9 @@ use App\Movie;
 class MoviesController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $movies = Movie::all();
-
         return view('movies.movies', compact ('movies'));
     }
 
@@ -55,6 +55,15 @@ class MoviesController extends Controller
 
         // Redirect after succes
         return redirect('/movies');
+    }
+
+    public function sort(string $filter, string $ordering)
+    {
+        $movies = Movie::orderBy($filter, $ordering)->get();
+        return $movies;
+
+        // @todo maak jsonresponse
+        // return new JsonResponse($moviesJson);
     }
 
     /**

@@ -20,7 +20,10 @@ Route::get('/movies', 'MoviesController@index');
 Route::get('/movies/create', 'MoviesController@create');
 Route::post('/movies/store', 'MoviesController@store');
 
+Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
+
+
 // Actors
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Auth
 Auth::routes();
