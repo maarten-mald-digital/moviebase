@@ -47,7 +47,9 @@
     </nav><!-- End navigation -->
 
     <main>
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
 
 </div>
