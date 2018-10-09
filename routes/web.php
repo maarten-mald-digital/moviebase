@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 // Movies
-Route::get('/movies', 'MovieController@index');
+Route::get('/movies', 'MoviesController@index');
 
 // Actors
