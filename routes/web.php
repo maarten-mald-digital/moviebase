@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
+
+// Movies
+Route::get('/movies', 'MovieController@index');
+
+// Actors
