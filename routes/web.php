@@ -17,5 +17,10 @@ Route::get('/', function () {
 
 // Movies
 Route::get('/movies', 'MoviesController@index');
+Route::get('/movies/create', 'MoviesController@create');
+Route::post('/movies/store', 'MoviesController@store');
 
 // Actors
+
+// Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();

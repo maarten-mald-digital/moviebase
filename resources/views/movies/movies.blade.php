@@ -1,8 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
-    <h1>Movies</h1>
+    <h1 class="float-left">Movies</h1>
+    <a class="btn btn-primary float-right" href="/movies/create" role="button">Add movie</a>
 
     <table class="table table-hover">
         <thead>
@@ -22,7 +23,7 @@
         @foreach($movies as $movie)
             <tr>
                 <th scope="row"><?php echo $count++; ?></th>
-                <td><img src="{{ asset('img/spiderman.jpeg') }}" /></td>
+                <td><img src="{{ asset('img/spiderman.jpeg') }}" style="width: 30%" /></td>
                 <td>{{ $movie->title }}</td>
                 <td>{{ $movie->genre }}</td>
                 <td>{{ $movie->release_date }}</td>

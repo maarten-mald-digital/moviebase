@@ -23,7 +23,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        //
+        return view('movies.create');
     }
 
     /**
@@ -34,7 +34,27 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Validation
+        $this->validate(request(), [
+            'title' => 'required',
+            'body'  => 'required'
+        ]);
+
+        // Creating the post
+        $movie = new Movie;
+
+        $movie->title   = request('title');
+        $movie->body    = request('body');
+        $movie->genre   = request('genre');
+        $movie->release_date = request('release_date');
+        $movie->rating  = 5.5;
+
+        // save it to the database
+        $movie->save();
+
+        // Redirect after succes
+        return redirect('/movies');
     }
 
     /**
