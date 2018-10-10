@@ -10470,3 +10470,18 @@ a.text-dark:focus {
   padding: 1.5rem 1rem;
 }
 
+.filter {
+  cursor: pointer;
+}
+
+.filter.toggled {
+  color: #fff;
+  background-color: #3490dc;
+  border-color: #3490dc;
+}
+
+#movie-results img {
+  width: 134px;
+  height: 82px;
+}
+

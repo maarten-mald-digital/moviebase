@@ -6,6 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 use App\Movie;
+use Psy\Util\Json;
 
 class MoviesController extends Controller
 {
@@ -62,8 +63,8 @@ class MoviesController extends Controller
         $movies = Movie::orderBy($filter, $ordering)->get();
         return $movies;
 
-        // @todo maak jsonresponse
-        // return new JsonResponse($moviesJson);
+//        $moviesJSON = json_encode($movies);
+//        return $moviesJSON;
     }
 
     /**

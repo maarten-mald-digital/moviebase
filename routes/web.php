@@ -20,8 +20,8 @@ Route::get('/movies', 'MoviesController@index');
 Route::get('/movies/create', 'MoviesController@create');
 Route::post('/movies/store', 'MoviesController@store');
 
-Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
 
+Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
 
 // Actors
 

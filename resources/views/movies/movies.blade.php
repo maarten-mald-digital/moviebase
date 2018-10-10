@@ -6,33 +6,29 @@
     <h1 class="float-left">Movies</h1>
     <a class="btn btn-primary float-right" href="/movies/create" role="button">Add movie</a>
 
-    <div id="div1">div 1</div>
-
     <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"><a id="titleSort">Title</a></th>
-            <th scope="col">Genre</th>
-            <th scope="col">Release date</th>
-            <th scope="col">Rating</th>
+
+            <th scope="col" class="filter" data-filter="title" onclick="makeAjax(event)">Title</th>
+            <th scope="col" class="filter" data-filter="genre" onclick="makeAjax(event)">Genre</th>
+            <th scope="col" class="filter" data-filter="release_date" onclick="makeAjax(event)">Release date</th>
+            <th scope="col" class="filter" data-filter="rating" onclick="makeAjax(event)">Rating</th>
         </tr>
         </thead>
 
-        <tbody>
-        <?php $count = 1; ?>
+        <tbody id="movie-results">
 
-        @foreach($movies as $movie)
-            <tr>
-                <th scope="row"><?php echo $count++; ?></th>
-                <td><img src="{{ asset('img/spiderman.jpeg') }}" style="width: 30%" /></td>
-                <td>{{ $movie->title }}</td>
-                <td>{{ $movie->genre }}</td>
-                <td>{{ $movie->release_date }}</td>
-                <td>{{ $movie->rating }}</td>
-            </tr>
-        @endforeach
+            @foreach($movies as $movie)
+                <tr>
+                    <td><img src="{{ asset('img/spiderman.jpeg') }}" /></td>
+                    <td>{{ $movie->title }}</td>
+                    <td>{{ $movie->genre }}</td>
+                    <td>{{ $movie->release_date }}</td>
+                    <td>{{ $movie->rating }}</td>
+                </tr>
+            @endforeach
 
         </tbody>
     </table>
