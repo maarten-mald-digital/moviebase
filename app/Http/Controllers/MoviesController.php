@@ -38,11 +38,7 @@ class MoviesController extends Controller
             'body'  => 'required'
         ]);
 
-        /* Better way to create the post,
-            so it can also be used for edit post
-        */
-
-        // Creating the post
+        // Creating or updating the post
         Movie::updateOrCreate(
             ['id' => $request->id],
             [
@@ -54,7 +50,9 @@ class MoviesController extends Controller
                 'image' => $imageUpload
             ]);
 
-        /*
+        return redirect('/movies');
+
+        /* Old way
         $movie = new Movie;
 
         $movie->title   = request('title');
@@ -69,7 +67,7 @@ class MoviesController extends Controller
         */
 
         // Redirect after succes
-        return redirect('/movies');
+        //return redirect('/movies');
     }
 
     public function sort(string $filter, string $ordering)

@@ -39,7 +39,10 @@
             for(var i=0, keys=Object.keys(result), l=keys.length; i<l; i++) {
 
                 singleResult = "<tr>\n" +
-                    "<td><img src='/public/img/spiderman.jpeg' /></td>\n" +
+
+                    "<td><img src="+ result[i].image +"></td>\n" +
+
+
                     "<td>" + result[i].title + "</td>\n" +
                     "<td>" + result[i].genre + "</td>\n" +
                     "<td>" + result[i].release_date + "</td>\n" +
