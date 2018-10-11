@@ -20,6 +20,23 @@
     color: #fff;
     background-color: #3490dc;
     border-color: #3490dc;
+
+  .fa-sort-up {
+    display: block;
+  }
+}
+
+// Table
+.table thead th {
+  position: relative;
+}
+
+.fa-sort-up {
+  position: absolute;
+  top: 14px;
+  font-size: 29px;
+  right: 15px;
+  display: none;
 }
 
 #movie-results {

@@ -11,10 +11,10 @@
         <tr>
             <th scope="col"></th>
 
-            <th scope="col" class="filter" data-filter="title" onclick="makeAjax(event)">Title</th>
-            <th scope="col" class="filter" data-filter="genre" onclick="makeAjax(event)">Genre</th>
-            <th scope="col" class="filter" data-filter="release_date" onclick="makeAjax(event)">Release date</th>
-            <th scope="col" class="filter" data-filter="rating" onclick="makeAjax(event)">Rating</th>
+            <th scope="col" class="filter" data-filter="title" onclick="makeAjax(event)">Title <i class="fas fa-sort-up"></i></th>
+            <th scope="col" class="filter" data-filter="genre" onclick="makeAjax(event)">Genre <i class="fas fa-sort-up"></i></th>
+            <th scope="col" class="filter" data-filter="release_date" onclick="makeAjax(event)">Release date <i class="fas fa-sort-up"></i></th>
+            <th scope="col" class="filter" data-filter="rating" onclick="makeAjax(event)">Rating <i class="fas fa-sort-up"></i></th>
         </tr>
         </thead>
 

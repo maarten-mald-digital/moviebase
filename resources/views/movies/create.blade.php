@@ -12,7 +12,9 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Spiderman">
         </div>
 
-        <input type="file" id="imageToUpload" name="imageToUpload">
+        <div class="form-group">
+            <input type="file" name="imageToUpload">
+        </div>
 
         <div class="form-group">
             <label for="genre">Select a genre</label>
