@@ -22,7 +22,7 @@
 
             @foreach($movies as $movie)
                 <tr>
-                    <td><img src="{{ asset('img/spiderman.jpeg') }}" /></td>
+                    <td><img src="{{ $movie->image }}" /></td>
                     <td>{{ $movie->title }}</td>
                     <td>{{ $movie->genre }}</td>
                     <td>{{ $movie->release_date }}</td>

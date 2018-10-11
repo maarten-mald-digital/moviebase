@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>test</h1>
-    <p>Lorum ipsum</p>
+    <h1>Home</h1>
+    <p>Welcome on moviebase!</p>
 
 @endsection

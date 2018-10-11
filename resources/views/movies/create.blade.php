@@ -4,13 +4,15 @@
 
     <h1>Add a movie</h1>
 
-    <form method="POST" action="/movies/store">
+    <form method="POST" action="/movies/store" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <div class="form-group">
             <label for="title">Movie title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Spiderman">
         </div>
+
+        <input type="file" id="imageToUpload" name="imageToUpload">
 
         <div class="form-group">
             <label for="genre">Select a genre</label>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
+use Illuminate\Support\Facades\Storage;
 
 use App\Movie;
 use Psy\Util\Json;
@@ -13,28 +15,22 @@ class MoviesController extends Controller
 
     public function index(Request $request)
     {
+        /** @var Movie $movies */
         $movies = Movie::all();
         return view('movies.movies', compact ('movies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('movies.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
+        // Get and store the image local
+        $imageUpload = $request->file('imageToUpload')->store('public/images');
 
         // Validation
         $this->validate(request(), [
@@ -42,7 +38,20 @@ class MoviesController extends Controller
             'body'  => 'required'
         ]);
 
+        /* Better way to create the post,
+            so it can also be used for edit post
+        */
+        
         // Creating the post
+//        Movie::updateOrCreate(
+//            ['id' => $request->id],
+//            [
+//                'title' => $request->title,
+//                'body' => $request->body,
+//            ]);
+//        Movie::create([]);
+//        Movie::update([]);
+
         $movie = new Movie;
 
         $movie->title   = request('title');
@@ -50,6 +59,7 @@ class MoviesController extends Controller
         $movie->genre   = request('genre');
         $movie->release_date = request('release_date');
         $movie->rating  = 5.5;
+        $movie->image = $imageUpload;
 
         // save it to the database
         $movie->save();
@@ -62,17 +72,9 @@ class MoviesController extends Controller
     {
         $movies = Movie::orderBy($filter, $ordering)->get();
         return $movies;
-
-//        $moviesJSON = json_encode($movies);
-//        return $moviesJSON;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
