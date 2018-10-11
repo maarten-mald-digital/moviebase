@@ -23,12 +23,24 @@
 
   .fa-sort-up {
     display: block;
+
+    
+    @media (max-width: 991.98px) {
+      display: none;
+    }
   }
 }
 
 // Table
-.table thead th {
-  position: relative;
+.table {
+
+  thead th {
+    position: relative;
+  }
+
+  tr {
+    cursor: pointer;
+  }
 }
 
 .fa-sort-up {
@@ -45,4 +57,53 @@
     width: 134px;
     height: 82px;
   }
+}
+
+/* dropzone in form */
+#dropzone {
+  position: relative;
+  border: 5px dotted #cabfbf;
+  border-radius: 5px;
+  color: #8e7777;
+  font: bold 24px/200px arial;
+  height: 200px;
+  margin: 30px auto;
+  text-align: center;
+  width: 100%;
+}
+
+#dropzone.hover {
+  border: 10px solid #3490dc;
+  color: #3490dc;
+}
+
+#dropzone.dropped {
+  background: #222;
+  border: 10px solid #444;
+}
+
+#dropzone div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#dropzone img {
+  border-radius: 10px;
+  vertical-align: middle;
+  max-width: 95%;
+  max-height: 95%;
+}
+
+#dropzone [type="file"] {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

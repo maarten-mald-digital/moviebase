@@ -12,8 +12,9 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Spiderman">
         </div>
 
-        <div class="form-group">
-            <input type="file" name="imageToUpload">
+        <div id="dropzone">
+            <div>Drop movie image</div>
+            <input type="file" name="imageToUpload" accept="image/png, image/jpg, image/jpeg, image/gif"/>
         </div>
 
         <div class="form-group">

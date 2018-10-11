@@ -21,7 +21,7 @@
         <tbody id="movie-results">
 
             @foreach($movies as $movie)
-                <tr>
+                <tr onclick="document.location = '/movies/{{ $movie->id }}';">
                     <td><img src="{{ $movie->image }}" /></td>
                     <td>{{ $movie->title }}</td>
                     <td>{{ $movie->genre }}</td>
