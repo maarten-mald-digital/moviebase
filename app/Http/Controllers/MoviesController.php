@@ -41,17 +41,20 @@ class MoviesController extends Controller
         /* Better way to create the post,
             so it can also be used for edit post
         */
-        
-        // Creating the post
-//        Movie::updateOrCreate(
-//            ['id' => $request->id],
-//            [
-//                'title' => $request->title,
-//                'body' => $request->body,
-//            ]);
-//        Movie::create([]);
-//        Movie::update([]);
 
+        // Creating the post
+        Movie::updateOrCreate(
+            ['id' => $request->id],
+            [
+                'title' => $request->title,
+                'body' => $request->body,
+                'genre' => $request->genre,
+                'release_date' => $request->release_date,
+                'rating' => 5.5,
+                'image' => $imageUpload
+            ]);
+
+        /*
         $movie = new Movie;
 
         $movie->title   = request('title');
@@ -63,6 +66,7 @@ class MoviesController extends Controller
 
         // save it to the database
         $movie->save();
+        */
 
         // Redirect after succes
         return redirect('/movies');
