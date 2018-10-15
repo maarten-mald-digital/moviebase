@@ -65,28 +65,48 @@ $(function() {
         target.addClass('toggled');
     }
 
-    $.ajax({
-        url: "/movies/sort/"+ $(target).data('filter') +"/"+ ordering,
+
+        // Get the filter type
+        let filterTable = $(target).data('table');
+
+        $.ajax({
+        url: "/" + filterTable + "/sort/"+ $(target).data('filter') +"/"+ ordering,
         success: function(result){
 
             let singleResult = '';
 
-            $("#movie-results").empty();
+            $("#"+ filterTable + "-results").empty();
 
-            for(var i=0, keys=Object.keys(result), l=keys.length; i<l; i++) {
+            // Filter movies
+            if(filterTable === "movies"){
+                for(var i=0, keys=Object.keys(result), l=keys.length; i<l; i++) {
 
-                singleResult = "<tr>\n" +
+                    singleResult = "<tr>\n" +
 
-                    "<td><img src="+ result[i].image +"></td>\n" +
+                        "<td><img src="+ result[i].image +"></td>\n" +
+                        "<td>" + result[i].title + "</td>\n" +
+                        "<td>" + result[i].genre + "</td>\n" +
+                        "<td>" + result[i].release_date + "</td>\n" +
+                        "<td>" + result[i].rating + "</td>\n" +
+                        "</tr>";
 
+                    $("#"+ filterTable + "-results").append(singleResult);
+                }
+            }
 
-                    "<td>" + result[i].title + "</td>\n" +
-                    "<td>" + result[i].genre + "</td>\n" +
-                    "<td>" + result[i].release_date + "</td>\n" +
-                    "<td>" + result[i].rating + "</td>\n" +
-                    "</tr>";
+            // Filter actors
+            else if(filterTable === "actors") {
+                for(var i=0, keys=Object.keys(result), l=keys.length; i<l; i++) {
+                    singleResult = "<tr>\n" +
 
-                $("#movie-results").append(singleResult);
+                        "<td><img src="+ result[i].image +"></td>\n" +
+                        "<td>" + result[i].name + "</td>\n" +
+                        "<td>" + result[i].birth_date + "</td>\n" +
+                        "<td>10</td>\n" +
+                        "</tr>";
+
+                    $("#"+ filterTable + "-results").append(singleResult);
+                }
             }
 
         }

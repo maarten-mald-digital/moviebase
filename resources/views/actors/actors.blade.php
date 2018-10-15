@@ -11,19 +11,19 @@
         <tr>
             <th scope="col"></th>
 
-            <th scope="col" class="filter" data-filter="title" onclick="makeAjax(event)">Title <i class="fas fa-sort-up"></i></th>
-            <th scope="col" class="filter" data-filter="genre" onclick="makeAjax(event)">Age <i class="fas fa-sort-up"></i></th>
-            <th scope="col" class="filter" data-filter="release_date" onclick="makeAjax(event)">Played in movies <i class="fas fa-sort-up"></i></th>
+            <th scope="col" class="filter" data-table="actors" data-filter="name" onclick="makeAjax(event)">Name <i class="fas fa-sort-up"></i></th>
+            <th scope="col" class="filter" data-table="actors" data-filter="birth_date" onclick="makeAjax(event)">Age <i class="fas fa-sort-up"></i></th>
+            <th scope="col" class="filter" data-table="actors" data-filter="movieCount" onclick="makeAjax(event)">Played in movies <i class="fas fa-sort-up"></i></th>
         </tr>
         </thead>
 
-        <tbody id="form-results">
+        <tbody id="actors-results">
 
         @foreach($actors as $actor)
             <tr onclick="document.location = '/actors/{{ $actor->id }}';">
                 <td><img src="{{ $actor->image }}" /></td>
                 <td>{{ $actor->name }}</td>
-                <td>{{$actor->getAge($actor->birth_date)}}</td>
+                <td>{{ $actor->birth_date }}</td>
                 <td>10</td>
             </tr>
         @endforeach

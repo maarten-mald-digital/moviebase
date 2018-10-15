@@ -26,6 +26,7 @@ Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
 
 // Actors
 Route::resource('actors', 'ActorsController');
+Route::get('/actors/sort/{filter}/{ordering}', 'ActorsController@sort');
 
 // Auth
 Auth::routes();

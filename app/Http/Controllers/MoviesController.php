@@ -53,6 +53,7 @@ class MoviesController extends Controller
         return redirect('/movies');
     }
 
+
     public function sort(string $filter, string $ordering)
     {
         $movies = Movie::orderBy($filter, $ordering)->get();

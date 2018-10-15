@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 use App\Actor;
@@ -44,6 +45,13 @@ class ActorsController extends Controller
             ]);
 
         return redirect('/actors');
+    }
+
+
+    public function sort(string $filter, string $ordering)
+    {
+        $actors = Actor::orderBy($filter, $ordering)->get();
+        return $actors;
     }
 
 

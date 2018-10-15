@@ -22,7 +22,7 @@ class Actor extends Model
     }
 
     // Returns age of the actor
-    public function getAge($birth_date)
+    public function getBirthDateAttribute($birth_date)
     {
         $age = date_diff(date_create($birth_date), date_create('now'))->y;
         return $age;
