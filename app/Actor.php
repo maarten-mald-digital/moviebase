@@ -20,4 +20,11 @@ class Actor extends Model
     {
         return str_replace('public/', '', env('APP_URL').'/'.$image);
     }
+
+    // Returns age of the actor
+    public function getAge($birth_date)
+    {
+        $age = date_diff(date_create($birth_date), date_create('now'))->y;
+        return $age;
+    }
 }

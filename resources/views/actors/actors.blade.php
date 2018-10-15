@@ -23,7 +23,7 @@
             <tr onclick="document.location = '/actors/{{ $actor->id }}';">
                 <td><img src="{{ $actor->image }}" /></td>
                 <td>{{ $actor->name }}</td>
-                <td>{{ $actor->age }}</td>
+                <td>{{$actor->getAge($actor->birth_date)}}</td>
                 <td>10</td>
             </tr>
         @endforeach
