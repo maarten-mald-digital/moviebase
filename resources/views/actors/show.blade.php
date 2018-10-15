@@ -29,6 +29,33 @@
                 </div>
         </div>
 
+        <div class="row played-in">
+            <div class="col">
+                <hr>
+                <h2 class="pb-1">Played in</h2>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
+                <h5 class="text-center p-2">Movie title</h5>
+            </div>
+
+            <div class="col-3">
+                <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
+                <h5 class="text-center p-2">Movie title</h5>
+            </div>
+
+            <div class="col-3">
+                <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
+                <h5 class="text-center p-2">Movie title</h5>
+            </div>
+        </div>
+
+
+        </div>
+
     </div>
 
 @endsection
