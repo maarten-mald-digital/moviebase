@@ -16,13 +16,16 @@ Route::get('/', function () {
 });
 
 // Movies
-Route::get('/movies', 'MoviesController@index');
-Route::get('/movies/{movie}', 'MoviesController@show');
-Route::get('/movies/create', 'MoviesController@create');
-Route::post('/movies/store', 'MoviesController@store');
-
-
+Route::resource('movies', 'MoviesController');
 Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
+
+//Route::get('/movies', 'MoviesController@index');
+//Route::get('/movies/{movie}', 'MoviesController@show');
+//Route::get('/movies/create', 'MoviesController@create');
+//Route::post('/movies/store', 'MoviesController@store');
+
+
+
 
 // Actors
 

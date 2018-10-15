@@ -4,7 +4,7 @@
 
 
     <h1 class="float-left">Movies</h1>
-    <a class="btn btn-primary float-right" href="/movies/create" role="button">Add movie</a>
+    <a class="btn btn-primary float-right" href="{{ route('movies.create') }}" role="button">Add movie</a>
 
     <table class="table table-hover">
         <thead>
