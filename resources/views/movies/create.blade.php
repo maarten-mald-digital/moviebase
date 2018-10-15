@@ -4,7 +4,7 @@
 
     <h1>Add a movie</h1>
 
-    <form method="POST" action="/movies/store" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('movies.store') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <div class="form-group">

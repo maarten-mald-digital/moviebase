@@ -41,7 +41,7 @@
                         <a class="nav-link" href="{{ route('movies.index') }}">Movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/actors">Actors</a>
+                        <a class="nav-link" href="{{ route('actors.index') }}">Actors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/profile">Profile</a>

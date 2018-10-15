@@ -40,10 +40,6 @@ $(function() {
     });
 });
 
-// $( document ).ready(function() {
-//     console.log("document ready");
-// });
-
 /* Generic ajax call to filter movies */
 // function makeAjax(filterType){
     function makeAjax(event){

@@ -30,7 +30,7 @@ class MoviesController extends Controller
     public function store(Request $request)
     {
         // Get and store the image local
-        $imageUpload = $request->file('imageToUpload')->store('public/images');
+        $imageUpload = $request->file('imageToUpload')->store('public/images/movies');
 
         // Validation
         $this->validate(request(), [
@@ -51,23 +51,6 @@ class MoviesController extends Controller
             ]);
 
         return redirect('/movies');
-
-        /* Old way
-        $movie = new Movie;
-
-        $movie->title   = request('title');
-        $movie->body    = request('body');
-        $movie->genre   = request('genre');
-        $movie->release_date = request('release_date');
-        $movie->rating  = 5.5;
-        $movie->image = $imageUpload;
-
-        // save it to the database
-        $movie->save();
-        */
-
-        // Redirect after succes
-        //return redirect('/movies');
     }
 
     public function sort(string $filter, string $ordering)

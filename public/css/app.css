@@ -10506,6 +10506,11 @@ a.text-dark:focus {
   display: none;
 }
 
+#form-results img {
+  width: 134px;
+  height: 82px;
+}
+
 #movie-results img {
   width: 134px;
   height: 82px;

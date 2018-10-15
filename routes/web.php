@@ -24,10 +24,8 @@ Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
 //Route::get('/movies/create', 'MoviesController@create');
 //Route::post('/movies/store', 'MoviesController@store');
 
-
-
-
 // Actors
+Route::resource('actors', 'ActorsController');
 
 // Auth
 Auth::routes();
