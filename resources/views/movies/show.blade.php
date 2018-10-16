@@ -57,49 +57,11 @@
             </div>
         </div>
 
-        @foreach ($movie->comments as $comment)
-            <!-- Start comment -->
-                <div class="row comments {{ Auth::check() && $comment->poster->id == Auth::user()->id ? "justify-content-end" : "" }}">
-                    <div class="col-md-1">
-                        <div class="thumbnail">
-                            <img class="img-fluid user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-                        </div>
-                    </div>
+        <div class="comments">
+            @include('movies.comments.comments')
+            @include('movies.comments.comment-form')
+        </div>
 
-                    <div class="col-md-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <strong>{{ $comment->poster->name }}</strong> <span class="text-muted">commented {{ $comment->created_at }}</span>
-                            </div>
-                            <div class="panel-body">
-                                {{ $comment->body }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End comment -->
-            @endforeach
-
-            @if(Auth::check())
-                <form method="POST" action="/movies/{{ $movie->id }}}/comments">
-
-                    <!-- Generates a unique hidden token, for security reasons  -->
-                    {{ csrf_field() }}
-
-                    <div class="form-group">
-                        <label for="comment">Comment</label>
-                        <textarea id="comment" name="comment" class="form-control"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-
-                <!-- validation message -->
-                @include ('layouts.errors')
-            @else
-                <p>Login to comment <a href="{{ route('login') }}">Login</a>
-                <p>No account? click <a href="{{ route('register') }}">here</a> to register</p>
-            @endif
-    </div>
+    </div><!-- End content -->
 
 @endsection
