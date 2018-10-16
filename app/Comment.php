@@ -19,11 +19,16 @@ class Comment extends Model
     }
 
 
-//    public function user(){
+    // public function user(){
     public function poster(){
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    // Get movie rating
+    public function movieRating() {
+        $ratings = Comment::all();
+        return $ratings;
+    }
 
 
 //    public function exercise()

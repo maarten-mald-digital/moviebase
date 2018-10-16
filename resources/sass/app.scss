@@ -174,8 +174,13 @@ tbody {
   border-width:8px;
 }
 
-.rating {
+.rating,
+#movie_rating_label {
   font-size: 30px;
+}
+
+#movie_rating_label {
+  padding-left: 10px;
 }
 
 .submit-button {

@@ -24,7 +24,9 @@
                     <div class="sidebar-inner">
                         <p>Genre: {{ $movie->genre }}</p>
                         <p>Rating: {{ $movie->rating }}</p>
-                        <p>Rating: {{ $movie->release }}</p>
+                        <p>Release date: {{ $movie->release_date }}</p>
+
+                        <p>Rating: {{ $movie->dynamic_rating }}</p>
                     </div>
                 </div>
             </div>
