@@ -28,5 +28,8 @@ Route::get('/movies/sort/{filter}/{ordering}', 'MoviesController@sort');
 Route::resource('actors', 'ActorsController');
 Route::get('/actors/sort/{filter}/{ordering}', 'ActorsController@sort');
 
+// Comments
+Route::post('/movies/{movie}/comments', 'CommentsController@store');
+
 // Auth
 Auth::routes();

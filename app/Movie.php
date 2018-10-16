@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
-    public $fillable = [
+    protected $fillable = [
         'id',
         'title',
         'body',
         'genre',
-        'image',
         'release_date',
-        'rating'
+        'rating',
+        'image'
     ];
 
     // Return the full image url and remove /public from url
@@ -29,11 +29,10 @@ class Movie extends Model
         return $date->format('F jS, Y');
     }
 
-    // Example to change the title value
-//    public function getTitleAttribute($title)
-//    {
-//        return ucfirst($title);
-//    }
-
+    // Comment section
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'movie_id');
+    }
 
 }
