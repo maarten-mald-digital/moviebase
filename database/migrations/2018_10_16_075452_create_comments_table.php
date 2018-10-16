@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('movie_id');
+            $table->float('movie_rating');
             $table->string('comment');
             $table->timestamps();
         });

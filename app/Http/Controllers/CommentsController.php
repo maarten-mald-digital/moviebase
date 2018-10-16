@@ -26,6 +26,7 @@ class CommentsController extends Controller
         $comment->comment = request('comment');
         $comment->user_id = $user_id;
         $comment->movie_id = $movie_id;
+        $comment->movie_rating = request('movie_rating');
 
         // save it to the database
         $comment->save();

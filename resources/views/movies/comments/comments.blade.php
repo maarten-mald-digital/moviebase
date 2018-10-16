@@ -1,6 +1,12 @@
 @foreach ($movie->comments as $comment)
     <!-- Start comment -->
     <div class="row comment {{ Auth::check() && $comment->poster->id == Auth::user()->id ? "justify-content-end" : "" }}">
+        <div class="col-md-1 text-center">
+            <div class="rating">
+                <p>{{ $comment->movie_rating }}</p>
+            </div>
+        </div>
+
         <div class="col-md-1">
             <div class="thumbnail">
                 <img class="img-fluid user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">

@@ -10,6 +10,7 @@ class Comment extends Model
         'id',
         'user_id',
         'movie_id',
+        'movie_rating',
         'comment'
     ];
 

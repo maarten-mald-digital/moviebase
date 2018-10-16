@@ -1,3 +1,16 @@
+$(function() {
+    var slider = document.getElementById("movie_rating_range");
+    var output = document.getElementById("movie_rating_label");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+})
+
+
+
 // To make a new movie we use this function
 // to make use of the dropzone
 $(function() {
