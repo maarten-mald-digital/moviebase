@@ -6,7 +6,7 @@
         <a class="btn btn-primary float-left" href="{{ route('movies.index') }}" role="button">< Return</a>
         <a class="btn btn-primary float-right" href="#" role="button">Edit</a>
     </div>
-    
+
     <div class="content">
 
         <div class="row movie">
@@ -32,23 +32,22 @@
             </div>
         </div>
 
-        <div class="row played-in">
+        <div class="row">
             <div class="col">
                 <hr>
                 <h2 class="pb-1">Actors</h2>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row movie-actors">
             @foreach ($movie->actors as $actor)
                 <div class="col-3">
-                    <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
+                    <div class="actor-image" style="background-image:url('{{ $actor->image }}')"></div>
                     <h5 class="text-center p-2">{{ $actor->name }}</h5>
                 </div>
             @endforeach
         </div>
-
-
+        
         <div class="row played-in">
             <div class="col">
                 <hr>

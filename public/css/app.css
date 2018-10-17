@@ -10645,3 +10645,11 @@ tbody img {
   width: 100%;
 }
 
+/* Actors */
+
+.movie-actors .actor-image {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
