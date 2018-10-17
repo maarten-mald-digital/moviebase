@@ -12,6 +12,37 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Spiderman">
         </div>
 
+        <div class="form-group">
+            <div class="row movie-actors">
+
+                {{--example--}}
+                {{--<input type="checkbox" id="inlineCheckbox1" name="my_checkbox[]" value="option1"> 1--}}
+                {{--<input type="checkbox" id="inlineCheckbox2" name="my_checkbox[]" value="option2"> 2--}}
+                {{--<input type="checkbox" id="inlineCheckbox3" name="my_checkbox[]" value="option3"> 3--}}
+
+                <?php
+                    $count = 0;
+                ?>
+
+                @foreach($actors as $actor)
+
+                    <div class="col-3">
+                        <div class="form-check">
+                            <div class="actor-image" style="background-image:url('{{ $actor->image }}')"></div>
+                            <input type="checkbox" id="defaultCheck<?php echo $count ?>" name="selected_actor[]" value="actor{{ $actor->id }}" class="form-check-input">
+                            <label class="form-check-label" for="defaultCheck<?php echo $count ?>">
+                                <h5 class="text-center p-2">{{ $actor->name }}</h5>
+                            </label>
+                        </div>
+                    </div>
+
+                    <?php $count++; ?>
+                @endforeach
+
+            </div>
+        </div>
+
+
         <div id="dropzone">
             <div>Drop movie image</div>
             <input type="file" name="imageToUpload" accept="image/png, image/jpg, image/jpeg, image/gif"/>

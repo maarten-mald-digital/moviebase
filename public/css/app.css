@@ -10653,3 +10653,16 @@ tbody img {
   background-size: cover;
 }
 
+.form-check-label {
+  margin-left: 10px;
+}
+
+.form-check {
+  padding-left: 0;
+}
+
+.form-check-input {
+  margin-top: 0.8rem;
+  margin-left: 0;
+}
+

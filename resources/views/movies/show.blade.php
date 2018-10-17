@@ -47,7 +47,7 @@
                 </div>
             @endforeach
         </div>
-        
+
         <div class="row played-in">
             <div class="col">
                 <hr>
