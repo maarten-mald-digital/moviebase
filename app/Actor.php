@@ -27,4 +27,10 @@ class Actor extends Model
         $age = date_diff(date_create($birth_date), date_create('now'))->y;
         return $age;
     }
+
+
+    // Trying stuff
+    public function movies(){
+        return $this->belongsToMany('App\Movie');
+    }
 }

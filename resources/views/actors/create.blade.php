@@ -17,6 +17,10 @@
             <input type="file" name="imageToUpload" accept="image/png, image/jpg, image/jpeg, image/gif"/>
         </div>
 
+        <hr>
+        <h2>Acted in</h2>
+        <hr>
+
         <div class="form-group">
             <label for="birth">Birth place</label>
             <input type="text" class="form-control" id="birth_place" name="birth_place" placeholder="London">

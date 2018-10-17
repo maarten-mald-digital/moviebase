@@ -35,4 +35,10 @@ class Movie extends Model
         return $this->hasMany(Comment::class, 'movie_id');
     }
 
+
+    // Trying stuff
+    public function actors(){
+        return $this->belongsToMany('App\Actor');
+    }
+
 }

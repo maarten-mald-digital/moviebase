@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Storage;
 
 use App\Movie;
+
 use Psy\Util\Json;
 
 class MoviesController extends Controller
@@ -15,9 +16,12 @@ class MoviesController extends Controller
 
     public function index(Request $request)
     {
-        /** @var Movie $movies */
-        $movies = Movie::all();
-        return view('movies.movies', compact ('movies'));
+
+//        $actors = Movie::find(1);
+//        return $actors->actors;
+
+         $movies = Movie::all();
+         return view('movies.movies', compact ('movies'));
     }
 
 
@@ -63,38 +67,25 @@ class MoviesController extends Controller
 
     public function show(Movie $movie)
     {
+//        $actors = Movie::find(1);
+//        return $actors->actors;
+
         return view('movies.show', compact('movie'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

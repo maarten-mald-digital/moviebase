@@ -6,6 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 use App\Actor;
+use App\Movie;
 
 class ActorsController extends Controller
 {
@@ -18,7 +19,7 @@ class ActorsController extends Controller
 
     public function create()
     {
-        return view('actors.create');
+        return view('actors.create', compact('$movies'));
     }
 
 
