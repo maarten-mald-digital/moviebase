@@ -34,27 +34,27 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (\Request::route()->getName() == '') ? 'active' : '' }}" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('movies.index') }}">Movies</a>
+                        <a class="nav-link {{ (\Request::route()->getName() == 'movies.index') ? 'active' : '' }}" href="{{ route('movies.index') }}">Movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('actors.index') }}">Actors</a>
+                        <a class="nav-link {{ (\Request::route()->getName() == 'actors.index') ? 'active' : '' }}" href="{{ route('actors.index') }}">Actors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
+                        <a class="nav-link {{ (\Request::route()->getName() == 'this.route') ? 'active' : '' }}" href="/profile">Profile</a>
                     </li>
 
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link {{ (\Request::route()->getName() == 'this.route') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         <li class="nav-item">
                             @if (Route::has('register'))
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link {{ (\Request::route()->getName() == 'this.route') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                             @endif
                         </li>
                     @else

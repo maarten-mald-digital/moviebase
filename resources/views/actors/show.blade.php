@@ -20,6 +20,7 @@
 
                 <div class="col-4">
                     <div class="actor-sidebar">
+                        <div class="sidebar-image" style="background:url('{{ $actor->image }}')"></div>
                         <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
                         <div class="sidebar-inner">
                             <p>Born in: {{ $actor->birth_place }}</p>

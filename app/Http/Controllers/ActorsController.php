@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-use App\Actor;
 use App\Movie;
+use App\Actor;
 
 class ActorsController extends Controller
 {
@@ -19,7 +19,8 @@ class ActorsController extends Controller
 
     public function create()
     {
-        return view('actors.create', compact('$movies'));
+        $movies = Movie::all();
+        return view('actors.create', compact ('movies'));
     }
 
 
@@ -35,7 +36,7 @@ class ActorsController extends Controller
         ]);
 
         // Creating or updating the post
-        Actor::updateOrCreate(
+        $createActor = Actor::updateOrCreate(
             ['id' => $request->id],
             [
                 'name' => $request->name,
@@ -44,6 +45,13 @@ class ActorsController extends Controller
                 'birth_place' => $request->birth_place,
                 'image' => $imageUpload
             ]);
+
+        // Get the id from the selected movies
+        $selectedMovies = $request->input('selected_movie');
+
+        // Create the actor, take the movies() and sync the selected movies
+        // This will be stored in the relation model
+        $createActor->movies()->sync($selectedMovies);
 
         return redirect('/actors');
     }

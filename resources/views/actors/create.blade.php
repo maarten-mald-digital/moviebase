@@ -17,9 +17,26 @@
             <input type="file" name="imageToUpload" accept="image/png, image/jpg, image/jpeg, image/gif"/>
         </div>
 
-        <hr>
-        <h2>Acted in</h2>
-        <hr>
+        <div class="form-group">
+            <div class="row movie-actors">
+
+                <?php $count = 0; ?>
+                @foreach($movies as $movie)
+
+                        <div class="col-3">
+                            <div class="form-check">
+                                <div class="actor-image" style="background-image:url('{{ $movie->image }}')"></div>
+                                <input type="checkbox" id="defaultCheck<?php echo $count ?>" name="selected_movie[]" value="{{ $movie->id }}" class="form-check-input">
+                                <label class="form-check-label" for="defaultCheck<?php echo $count ?>">
+                                    <h5 class="text-center p-2">{{ $movie->title }}</h5>
+                                </label>
+                            </div>
+                        </div>
+                    <?php $count++; ?>
+                @endforeach
+
+            </div>
+        </div>
 
         <div class="form-group">
             <label for="birth">Birth place</label>
