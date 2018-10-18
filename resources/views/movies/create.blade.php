@@ -15,15 +15,7 @@
         <div class="form-group">
             <div class="row movie-actors">
 
-                {{--example--}}
-                {{--<input type="checkbox" id="inlineCheckbox1" name="my_checkbox[]" value="option1"> 1--}}
-                {{--<input type="checkbox" id="inlineCheckbox2" name="my_checkbox[]" value="option2"> 2--}}
-                {{--<input type="checkbox" id="inlineCheckbox3" name="my_checkbox[]" value="option3"> 3--}}
-
-                <?php
-                    $count = 0;
-                ?>
-
+                <?php $count = 0; ?>
                 @foreach($actors as $actor)
 
                     <div class="col-3">
@@ -41,7 +33,6 @@
 
             </div>
         </div>
-
 
         <div id="dropzone">
             <div>Drop movie image</div>
