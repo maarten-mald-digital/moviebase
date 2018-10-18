@@ -31,7 +31,8 @@ class CommentsController extends Controller
         // save it to the database
         $comment->save();
 
-        // Redicrect after succes
+        // Redirect after succes
         return redirect()->back();
+
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Movie;
 use App\Actor;
+use App\Comment;
 
 use Psy\Util\Json;
 
@@ -17,9 +18,6 @@ class MoviesController extends Controller
 
     public function index(Request $request)
     {
-//        $movies = Movie::with('actors')->get();
-//        return view('movies.movies', compact ('movies'));
-
          $movies = Movie::all();
          return view('movies.movies', compact ('movies'));
     }
