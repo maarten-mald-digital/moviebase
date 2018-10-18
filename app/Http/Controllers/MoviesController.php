@@ -43,17 +43,8 @@ class MoviesController extends Controller
             'body'  => 'required'
         ]);
 
-        // Get selected actors from form
-        // Put the post in db
-        // save the relation to db
-
-        // Try this to see the result array
-        $selectedActors = $request->input('selected_actor');
-        //        dd($selectedActors);
-
-
         // Creating or updating the post
-        Movie::updateOrCreate(
+        $createMovie = Movie::updateOrCreate(
             ['id' => $request->id],
             [
                 'title' => $request->title,
@@ -61,9 +52,15 @@ class MoviesController extends Controller
                 'genre' => $request->genre,
                 'release_date' => $request->release_date,
                 'rating' => 5.5,
-                'image' => $imageUpload,
-
+                'image' => $imageUpload
             ]);
+
+        // Get the id from the selected actors
+        $selectedActors = $request->input('selected_actor');
+
+        // Create the movie, take the actors() and sync the selected actors
+        // This will be stored in the relation model
+        $createMovie->actors()->sync($selectedActors);
 
         return redirect('/movies');
     }

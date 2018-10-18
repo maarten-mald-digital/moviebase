@@ -17,7 +17,7 @@ class CreateActorMovie extends Migration
             $table->increments('id');
             $table->integer('actor_id');
             $table->integer('movie_id');
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

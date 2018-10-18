@@ -29,7 +29,7 @@
                     <div class="col-3">
                         <div class="form-check">
                             <div class="actor-image" style="background-image:url('{{ $actor->image }}')"></div>
-                            <input type="checkbox" id="defaultCheck<?php echo $count ?>" name="selected_actor[]" value="actor{{ $actor->id }}" class="form-check-input">
+                            <input type="checkbox" id="defaultCheck<?php echo $count ?>" name="selected_actor[]" value="{{ $actor->id }}" class="form-check-input">
                             <label class="form-check-label" for="defaultCheck<?php echo $count ?>">
                                 <h5 class="text-center p-2">{{ $actor->name }}</h5>
                             </label>
