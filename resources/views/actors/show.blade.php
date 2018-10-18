@@ -36,21 +36,13 @@
             </div>
 
         </div>
-        <div class="row">
-            <div class="col-3">
-                <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
-                <h5 class="text-center p-2">Movie title</h5>
-            </div>
-
-            <div class="col-3">
-                <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
-                <h5 class="text-center p-2">Movie title</h5>
-            </div>
-
-            <div class="col-3">
-                <img src="{{ $actor->image }}" class="img-fluid" alt="Responsive image">
-                <h5 class="text-center p-2">Movie title</h5>
-            </div>
+        <div class="row movie-actors">
+            @foreach ($actor->movies as $movie)
+                <div class="col-3">
+                    <div class="actor-image" style="background-image:url('{{ $movie->image }}')"></div>
+                    <h5 class="text-center p-2">{{ $movie->title }}</h5>
+                </div>
+            @endforeach
         </div>
 
 
