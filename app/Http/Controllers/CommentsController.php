@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Comment;
 use App\Movie;
+use App\Events\CommentAdded;
 
 class CommentsController extends Controller
 {
@@ -30,6 +31,9 @@ class CommentsController extends Controller
 
         // save it to the database
         $comment->save();
+
+        // Trigger the CommentAdded event
+        event(new CommentAdded('this is my message'));
 
         // Redirect after succes
         return redirect()->back();
