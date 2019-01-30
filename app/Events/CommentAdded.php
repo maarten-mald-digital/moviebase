@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -24,15 +25,5 @@ class CommentAdded
     public function __construct($movie_id)
     {
         $this->movie_id = $movie_id;
-    }
-
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
-     */
-    public function broadcastOn()
-    {
-        return new PrivateChannel('channel-name');
     }
 }

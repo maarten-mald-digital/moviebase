@@ -33,7 +33,7 @@ class CommentsController extends Controller
         $comment->save();
 
         // Trigger the CommentAdded event
-        event(new CommentAdded('this is my message'));
+        event(new CommentAdded($movie_id));
 
         // Redirect after succes
         return redirect()->back();
