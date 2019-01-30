@@ -31,7 +31,7 @@ class CommentAddedListener
     {
       $ratings = Comment::where('movie_id', $movie->movie_id)->pluck('movie_rating')->toArray();
       $ratingAverageDirty = array_sum($ratings) / count($ratings);
-      $ratingAverage = number_format($ratingAverageDirty, 2, '.', ',');
+      $ratingAverage = number_format($ratingAverageDirty, 1, '.', ',');
 
       $movie = Movie::where('id', $movie->movie_id)->update(array('rating' => $ratingAverage));
 
